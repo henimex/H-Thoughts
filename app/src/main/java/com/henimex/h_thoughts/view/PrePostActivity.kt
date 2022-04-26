@@ -1,4 +1,4 @@
-package com.henimex.h_thoughts
+package com.henimex.h_thoughts.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +7,9 @@ import android.widget.Toast
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.henimex.h_thoughts.R
 import kotlinx.android.synthetic.main.activity_pre_post.*
 
 class PrePostActivity : AppCompatActivity() {
@@ -34,11 +34,12 @@ class PrePostActivity : AppCompatActivity() {
 
         val postData = hashMapOf<String, Any>()
         postData.put("thoughts", thoughts)
-        postData.put("user", thoughts)
+        postData.put("user", user)
         postData.put("post_date", postDate)
 
         db.collection(colName).add(postData).addOnCompleteListener { task ->
             if (task.isSuccessful){
+                Toast.makeText(this,"Post Added", Toast.LENGTH_LONG).show()
                 finish();
             }
         }.addOnFailureListener { exception ->

@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HThoughts">
         <activity
-            android:name=".PrePostActivity"
+            android:name=".view.PrePostActivity"
             android:exported="false" />
         <activity
-            android:name=".UserPanel"
+            android:name=".view.UserPanel"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.henimex.h_thoughts.R
@@ -57,8 +58,10 @@ class UserPanel : AppCompatActivity() {
     }
 
 
-    fun getPostData() {
-        db.collection(colName).addSnapshotListener { snapshot, error ->
+    private fun getPostData() {
+        //db.collection(colName).whereEqualTo("thoughts", "First Post").addSnapshotListener
+
+        db.collection(colName).orderBy("post_date",Query.Direction.DESCENDING).addSnapshotListener { snapshot, error ->
             if (error != null) {
                 Toast.makeText(this, error.localizedMessage, Toast.LENGTH_LONG).show();
             } else if (snapshot != null && !snapshot.isEmpty) {

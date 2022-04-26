@@ -11,14 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="enter e-mail"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="E-Mail"
         app:layout_constraintStart_toStartOf="@+id/pwText"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/pwText"
@@ -27,13 +26,12 @@
         android:layout_marginTop="35dp"
         android:ems="10"
         android:hint="enter your password"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Password"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/idText"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/idText" />
 
     <Button
         android:id="@+id/button"

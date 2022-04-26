@@ -1,5 +1,6 @@
 package com.henimex.h_thoughts
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,44 +19,54 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         auth = Firebase.auth
-
-
     }
 
-    fun login(view: View){
+    fun login(view: View) {
         val email = idText.text.toString();
         val password = pwText.text.toString();
 
-        auth.signInWithEmailAndPassword(email,password)
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
-                if (task.isSuccessful){
+                if (task.isSuccessful) {
                     val user = auth.currentUser
-                    Toast.makeText(baseContext, "Logged In" + user.toString(), Toast.LENGTH_SHORT).show();
-                } else {
+                    Toast.makeText(baseContext, "Logged In" + user.toString(), Toast.LENGTH_SHORT)
+                        .show();
+
+                    val intent = Intent(this, UserPanel::class.java);
+                    startActivity(intent);
+                    finish();
+                }
+                else {
                     Toast.makeText(baseContext, "Login Failed", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(baseContext, task.exception.toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(baseContext, task.exception.toString(), Toast.LENGTH_LONG)
+                        .show();
                 }
             }
-
-
-        println(email + password);
+            .addOnFailureListener { exception ->
+                Toast.makeText(applicationContext, exception.localizedMessage, Toast.LENGTH_SHORT).show();}
     }
 
-    fun register(view: View){
+    fun register(view: View) {
         val email = idText.text.toString();
         val password = pwText.text.toString();
 
-        auth.createUserWithEmailAndPassword(email,password)
+        auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
-                if (task.isSuccessful){
+                if (task.isSuccessful) {
                     val user = auth.currentUser;
-                    Toast.makeText(baseContext, "User Registration Completed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(baseContext, "User Registration Completed", Toast.LENGTH_SHORT)
+                        .show();
+
+                    val intent = Intent(this, UserPanel::class.java);
+                    startActivity(intent);
+                    finish();
                 } else {
-                    Toast.makeText(baseContext, "User Registration Failed", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(baseContext, task.exception.toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(baseContext, "User Registration Failed", Toast.LENGTH_SHORT)
+                        .show();
+                    Toast.makeText(baseContext, task.exception.toString(), Toast.LENGTH_LONG)
+                        .show();
                 }
             }
-
-        println(email + password);
     }
+
 }

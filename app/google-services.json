@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1093668166606",
+    "project_id": "sharetogh",
+    "storage_bucket": "sharetogh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093668166606:android:e8d7171558a1392386e99f",
+        "android_client_info": {
+          "package_name": "com.henimex.h_thoughts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093668166606-dmo56p7a4eoapkhkgsc0vl680868tvpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmri5O5lcu4EyTWsMGXdl4TgrgBl9rMRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1093668166606-dmo56p7a4eoapkhkgsc0vl680868tvpr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

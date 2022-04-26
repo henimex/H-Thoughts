@@ -26,6 +26,8 @@ class UserPanel : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java);
             startActivity(intent);
             finish();
+        } else if (item.itemId == R.id.create_post){
+            startActivity(Intent(this, PrePostActivity::class.java));
         }
         return super.onOptionsItemSelected(item)
     }

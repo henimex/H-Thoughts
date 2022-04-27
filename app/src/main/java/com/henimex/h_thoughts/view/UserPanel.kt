@@ -73,7 +73,7 @@ class UserPanel : AppCompatActivity() {
                     val post = doc.get("thoughts") as String
                     val pictureUrl = doc.get("pictureUrl") as String?
 
-                    var downloadedPost = PostModel(uName, post, null);
+                    var downloadedPost = PostModel(uName, post, pictureUrl);
                     downloadedPostList.add(downloadedPost);
                 }
                 recyclerViewAdapter.notifyDataSetChanged();

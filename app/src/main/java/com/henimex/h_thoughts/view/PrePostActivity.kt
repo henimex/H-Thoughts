@@ -52,14 +52,15 @@ class PrePostActivity : AppCompatActivity() {
             val imageName = "${uuid}.jpg"
             val reference = storage.reference
             val imageRef = reference.child("images").child(imageName)
-            imageRef.putFile(selectedPicture!!).addOnSuccessListener {
-                imageRef.downloadUrl.addOnSuccessListener { uri ->
-                    val takenUri = uri.toString()
+            imageRef.putFile(selectedPicture!!).addOnSuccessListener { task ->
+                val uploadedImageRef = reference.child("images").child(imageName)
+                uploadedImageRef.downloadUrl.addOnSuccessListener { uri ->
+                    val downloadUrl = uri.toString()
                     val postData = hashMapOf<String, Any>()
                     postData["thoughts"] = thoughts
                     postData["user"] = user
                     postData["post_date"] = postDate
-                    postData["pictureUrl"] = takenUri
+                    postData["pictureUrl"] = downloadUrl
 
                     db.collection(colName).add(postData).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
@@ -70,6 +71,7 @@ class PrePostActivity : AppCompatActivity() {
                         Toast.makeText(this, exception.localizedMessage, Toast.LENGTH_LONG).show()
                     }
                 }
+
             }.addOnFailureListener { exception ->
                 Toast.makeText(applicationContext, exception.localizedMessage, Toast.LENGTH_LONG).show()
             }

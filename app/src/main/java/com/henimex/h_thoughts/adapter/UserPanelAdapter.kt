@@ -24,10 +24,7 @@ class UserPanelAdapter(val downloadedPostList: ArrayList<PostModel>) :
     override fun onBindViewHolder(holder: PostHolder, position: Int) {
         holder.itemView.recycler_row_user_name.text = downloadedPostList[position].user;
         holder.itemView.recycler_row_post_msg.text = downloadedPostList[position].thoughts;
-        holder.itemView.recycler_row_post_uri.text = downloadedPostList[position].pictureUrl;
-        if (downloadedPostList[position].thoughts == null){
-            println("pictureUrl")
-        }
+
         if (downloadedPostList[position].pictureUrl != null){
             holder.itemView.rc_imageView.visibility = View.VISIBLE
             Picasso.get().load(downloadedPostList[position].pictureUrl).into(holder.itemView.rc_imageView)

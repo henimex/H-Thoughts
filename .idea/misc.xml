@@ -4,16 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Apps/Android/H-Thoughts/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Apps/Android/H-Thoughts/app/src/main/res/layout/activity_user_panel.xml" value="0.25" />
-        <entry key="..\:/Apps/Android/H-Thoughts/app/src/main/res/layout/recycler_row.xml" value="0.3442028985507246" />
+        <entry key="..\:/Apps/Android/H-Thoughts/app/src/main/res/layout/activity_user_panel.xml" value="0.21023302938196556" />
         <entry key="..\:/Education/Android/H-Thoughts/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Education/Android/H-Thoughts/app/src/main/res/layout/activity_pre_post.xml" value="0.21920289855072464" />
         <entry key="..\:/Education/Android/H-Thoughts/app/src/main/res/layout/activity_user_panel.xml" value="0.27445652173913043" />
+        <entry key="..\:/Education/Android/H-Thoughts/app/src/main/res/layout/recycler_row.xml" value="0.33" />
         <entry key="..\:/Education/Android/H-Thoughts/app/src/main/res/menu/main_menu.xml" value="0.3625" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

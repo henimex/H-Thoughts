@@ -1,28 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/recycler_row_user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="User Name"
-        android:textSize="24sp"
         android:layout_margin="4dp"
+        android:text="User Name"
         android:textColor="#0D3C8E"
-        android:id="@+id/recycler_row_user_name">
-    </TextView>
+        android:textSize="10sp"></TextView>
 
     <TextView
+        android:id="@+id/recycler_row_post_msg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="User Name"
-        android:textSize="18sp"
         android:layout_margin="4dp"
-        android:textColor="#C68F3E"
-        android:id="@+id/recycler_row_post_msg">
-    </TextView>
+        android:text="Post"
+        android:textColor="#000000"
+        android:textSize="12sp"></TextView>
+
+    <TextView
+        android:id="@+id/recycler_row_post_uri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="Uri"
+        android:textColor="#000000"
+        android:textSize="12sp"></TextView>
+
+    <ImageView
+        android:id="@+id/rc_imageView"
+        android:layout_width="match_parent"
+
+        android:layout_height="130dp"
+        android:layout_margin="5dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
 
 </LinearLayout>
